@@ -6,6 +6,7 @@
 <!-- Breadcrumb -->
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Home</a></li>
+	<li><a href="{{ url('calendarreal') }}">Calendar-Cases</a></li>
     <li class="active">Calendar</li>
 </ol>
 
@@ -16,7 +17,7 @@ $user = \Auth::user()->role;
 
 ?>
 
-<h4 class="page-title">CALENDAR - CASES</h4>
+<h4 class="page-title">CALENDAR - TASKS</h4>
 
 <div class="form-group col-md-3" style="display: block; margin-left: 35%;">
 <h4>  
@@ -31,27 +32,6 @@ $user = \Auth::user()->role;
 	</div>
 	@endif
 </h4>
-</div>
-
-<div class="row">
-<div class="col-md-9">
-<div class="form-group" style="float: left; margin-left: 10px;"><div class="btn-sm m-t-10"  style="margin-top: 20px; height:25px; width: 75px; background-color: #4caf50;"></div><label style="float: left;">Active Cases</label></div>
-<div class="form-group" style="float: left; margin-left: 50px;"><div class="btn-sm m-t-10"  style="margin-top: 20px; height:25px; width: 75px; background-color: #3385ff;"></div><label style="float: right;">Closed Cases</label></div>
-
-<!--
-
-
-
- <div class="form-group">
-                    {!! Form::label('Case Sub Type', '', array('class' => 'col-md-3 control-label')) !!}
-                    <div class="col-md-6">
-                    {!! Form::select('case_sub_type',$selectDepartments,0,['class' => 'form-control input-sm' ,'name' => 'case_sub_type','id' => 'case_sub_type']) !!}
-                    <div id = "hse_error_sub_type"></div>
-                  </div>
-                </div>-->
-
-<div class="block-area">
-
 </div>
 
 <div class="col-md-12 clearfix">
@@ -78,110 +58,6 @@ $user = \Auth::user()->role;
     </div>
 </div>
 </div>
-
-<div class="col-md-3">
-    <div class="box box-solid" style="margin-right: 30px;">
-        <div class="box-header with-border" id="myTasksHeader" onclick="window.location = '{{ 'tasks-calendar' }}'">
-            <h4 class="box-title">My Tasks</h4>
-			<h4 class="box-title" style="float:right;">Overview</h4>
-        </div>
-        <div class="box-body">
-              <!-- the events -->
-			<div class="container" style="padding-left: 20px; padding-bottom: 10px; padding-right: 20px; background-color:#4caf50;">
-			<br>
-				<div id="myCarousel" class="carousel slide" data-ride="carousel">
-   
-
-					<!-- Wrapper for slides -->
-					<div class="carousel-inner" role="listbox">
-						<div class="item active">
-							<div>
-								<h4> Get Cement Quotation </h4>
-								<div class="form-group">
-									<div class="pull-left">1:30PM</div> 
-									<div class="pull-right">2017/04/19</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="item">
-							<div>
-								<h4> Get Cement Quotation </h4>
-								<div class="form-group">
-									<div class="pull-left">1:30PM</div> 
-									<div class="pull-right">2017/04/19</div>
-								</div>
-							</div>
-						</div>
-    
-						<div class="item">
-							<div>
-								<h4> Get Cement Quotation </h4>
-								<div class="form-group">
-									<div class="pull-left">1:30PM</div> 
-									<div class="pull-right">2017/04/19</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="item">
-							<div>
-							<h4> Get Cement Quotation </h4>
-								<div class="form-group">
-									<div class="pull-left">1:30PM</div> 
-									<div class="pull-right">2017/04/19</div>
-								</div>
-							</div>
-						</div>
-				</div>
-			</div>
-		</div>
-    </div>
-            <!-- /.box-body -->
-</div>
-		  
-		  <div class="box box-solid">
-            <div class="box-header with-border">
-              <h4 class="box-title">Overdue Tasks</h4>
-			  
-            </div>
-            <div class="box-body">
-              <!-- the events -->
-              <div id="external-events">
-			    @if(count($overdueTasks) === 0)
-					<div class="external-event bg-green">No Overdue Tasks</div>
-				@else
-					@foreach  ($overdueTasks as  $overdueTasks)
-						<div class="external-event bg-red">{{$overdueTasks->description}}</div>
-					@endforeach
-				@endif
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-		  
-		  <div class="box box-solid">
-            <div class="box-header with-border">
-              <h4 class="box-title">Completed Tasks</h4>
-			  
-            </div>
-            <div class="box-body">
-              <!-- the events -->
-              <div id="external-events">
-                @foreach  ($completedTasks as  $completedTasks)
-					<div class="external-event bg-blue">{{$completedTasks->description}}</div>
-				@endforeach 
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-		  
-		  
-          
-        </div>
-
-</div>
-<!----------------------------------------------------------------------------------->
 
 @include('cases.profile')
 @include('functions.caseModal')

@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use App\CalendarEvent;
 use App\MeetingAttendee;
 use App\CaseEscalator;
+use App\Services\TaskCalendarService;
+
 
 class CalendarController extends Controller
 {
@@ -157,4 +159,10 @@ class CalendarController extends Controller
     {
         //
     }
+	
+	public function showCalendar(TaskCalendarService $tasks){
+		$overdueTasks = $tasks->getOverdueTasks();
+		$completedTasks = $tasks->getTasks();
+		return view('calendarreal.calendar',compact('overdueTasks','completedTasks'));
+	}
 }

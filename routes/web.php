@@ -940,6 +940,7 @@ Route::get('calendarreal', ['middleware' => 'auth', function()
     return view('calendarreal.calendar');
 }]);
 
+Route::get('calendarreal', ['middleware' => 'auth', 'uses' => 'CalendarController@showCalendar']);
 Route::get('calendar', ['middleware' => 'auth', 'uses' => 'CalendarController@index']);
 Route::post('getEvents', ['middleware' => 'auth', 'uses' => 'CalendarController@show']);
 
@@ -953,6 +954,27 @@ Route::get('lcases-calendar-list-perUser', ['middleware' => 'auth', 'uses' => 'C
 /*
 |--------------------------------------------------------------------------
 | END CALENDAR DEMO ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+
+/*
+|--------------------------------------------------------------------------
+| CALENDAR TASKS ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('tasks-calendar', ['middleware' => 'auth', function()
+{
+    return view('task_calendar.calendar');
+}]);
+Route::get('getCalendarTasks', ['middleware' => 'auth', 'uses' => 'TaskCalendarController@index']);
+
+/*
+|--------------------------------------------------------------------------
+| END CALENDAR TASKS ROUTING
 |--------------------------------------------------------------------------
 |
 */
