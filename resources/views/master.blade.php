@@ -450,7 +450,13 @@
         <script src="{{ asset('js/d3/libs/d3.v2.js') }}"></script>
         <script src="{{ asset('js/d3/Tooltip.js') }}"></script>
         <script src="{{ asset('js/d3/Tooltip.js') }}"></script>
-    
+		
+		
+     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="angular_App/app.js"></script>
+    <script src="angular_App/controller.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="bower_components/ng-dialog/js/ngDialog.js" charset="utf-8"></script>
 
 
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEfKDpCII3lvBkhIGAdIeK7qjKmX5kbd8&libraries=places"></script>
