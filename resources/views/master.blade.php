@@ -91,8 +91,22 @@
                             <i class="n-count animated">{{ count($addressBookNumber,0) }}</i>
                         </a>
                     </div>
+					
+					<div class="pull-left" style="margin-left: 20px; width:500px;">
+					
+						{!! Form::open(['url' => '#', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"updateDepartmentForm" ]) !!}
+							<div class="form-group" style="margin-top: 5px;">
+								<div class="col-md-6">
+									{!! Form::text('name',NULL,['class' => 'form-control input-sm','id' => 'name','placeholder' =>"Search"]) !!} 
+								</div>
+								<button type="submit" class="btn btn-sm"><i class="fa fa-search fa-fw" style="color:#ffffff"></i></button>
+							</div>
+						{!! Form::close() !!}
+					</div>
 
 					</div>
+					
+			
 
 
 
